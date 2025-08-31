@@ -152,6 +152,14 @@
       // GWD Predefined Function
       gwd.actions.gwdGoogleAd.exit('gwd-ad', 'Banner_Click', 'https://www.bonzhoor.com/post/florent-pagny-pr%C3%A9pare-son-grand-retour-mais-sa-sant%C3%A9-reste-fragile-il-n-est-pas-en-r%C3%A9mission', true, true, 'page1');
     };
+    gwd.auto_Page1Click1 = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdGoogleAd.exit('gwd-ad', 'banner', 'https://www.bonzhoor.com/post/florent-pagny-pr%C3%A9pare-son-grand-retour-mais-sa-sant%C3%A9-reste-fragile-il-n-est-pas-en-r%C3%A9mission', true, true, 'page1');
+    };
+    gwd.auto_BANNER_267x350Click = function(event) {
+      // GWD Predefined Function
+      gwd.actions.gwdGoogleAd.exit('gwd-ad', 'banner_1', 'https://www.bonzhoor.com/post/florent-pagny-pr%C3%A9pare-son-grand-retour-mais-sa-sant%C3%A9-reste-fragile-il-n-est-pas-en-r%C3%A9mission', true, true, 'page1');
+    };
   </script>
   <script type="text/javascript" gwd-events="registration">
     // Support code for event handling in Google Web Designer
@@ -159,11 +167,15 @@
     gwd.actions.events.registerEventHandlers = function(event) {
       gwd.actions.events.addHandler('page1', 'event-1', gwd.auto_Page1Event_1, false);
       gwd.actions.events.addHandler('page1', 'click', gwd.auto_Page1Click, false);
+      gwd.actions.events.addHandler('page1', 'click', gwd.auto_Page1Click1, false);
+      gwd.actions.events.addHandler('BANNER-267x350', 'click', gwd.auto_BANNER_267x350Click, false);
       gwd.actions.timeline.captureAnimationEnd(document.body);
     };
     gwd.actions.events.deregisterEventHandlers = function(event) {
       gwd.actions.events.removeHandler('page1', 'event-1', gwd.auto_Page1Event_1, false);
       gwd.actions.events.removeHandler('page1', 'click', gwd.auto_Page1Click, false);
+      gwd.actions.events.removeHandler('page1', 'click', gwd.auto_Page1Click1, false);
+      gwd.actions.events.removeHandler('BANNER-267x350', 'click', gwd.auto_BANNER_267x350Click, false);
       gwd.actions.timeline.releaseAnimationEnd(document.body);
     };
     document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
@@ -184,6 +196,8 @@
       </gwd-page>
     </gwd-pagedeck>
     <gwd-exit metric="Banner_Click" url="https://www.bonzhoor.com/post/florent-pagny-pr%C3%A9pare-son-grand-retour-mais-sa-sant%C3%A9-reste-fragile-il-n-est-pas-en-r%C3%A9mission"></gwd-exit>
+    <gwd-exit metric="banner" url="https://www.bonzhoor.com/post/florent-pagny-pr%C3%A9pare-son-grand-retour-mais-sa-sant%C3%A9-reste-fragile-il-n-est-pas-en-r%C3%A9mission"></gwd-exit>
+    <gwd-exit metric="banner_1" url="https://www.bonzhoor.com/post/florent-pagny-pr%C3%A9pare-son-grand-retour-mais-sa-sant%C3%A9-reste-fragile-il-n-est-pas-en-r%C3%A9mission"></gwd-exit>
   </gwd-google-ad>
   <script type="text/javascript" id="gwd-init-code">
     (function() {
